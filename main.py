@@ -14,11 +14,15 @@ while winVal == True:
         inputVal = 4
 
     print(board[0],"\n",board[1],"\n",board[2])
-    command1 = int(input('how many over >'))
-    command2 = int(input('how many down >'))
-    
-    del board[command2][command1]
-    board[command2].insert(command1,inputVal)
+    command1 = int(input('how many over >')) -1
+    command2 = int(input('how many down >')) -1
+
+    if board[command2][command1] == 0:
+        del board[command2][command1]
+        board[command2].insert(command1,inputVal)
+    else:
+        print("That square is taken. Try again.")
+        turn = not(turn)
 
     turn = not(turn)
     #Creates columns to search for wins on
