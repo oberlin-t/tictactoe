@@ -1,3 +1,4 @@
+turnCount = 0
 turn = True
 #Defines that nobody has won at the start of the game
 winVal = True
@@ -8,6 +9,10 @@ board = [[0,0,0],
 
 
 while winVal == True:
+
+    if turnCount == 9:
+        break
+    
     if turn == True:
         inputVal = 1
     else:
@@ -54,7 +59,15 @@ while winVal == True:
         winVal = sum(column1) != x and sum(column2) != x and sum(column3) != x and sum(diagonal1) != x and sum(diagonal2) != x and sum(board[0]) != x and sum(board[1]) != x and sum(board[2]) != x
         if winVal == False:
             if x == 3:
-                winner = 'p1'
+                winner = 'Player 1'
             elif x == 12:
-                winner = 'p2'
+                winner = 'Player 2'
             break
+
+    turnCount += 1
+
+if turnCount == 9 and winVal == True:
+    print('',board[0],'\n',board[1],'\n',board[2])
+    print("It was a tie!")
+else:
+    print(winner,"is the winner")
