@@ -13,7 +13,7 @@ while winVal == True:
     else:
         inputVal = 4
 
-    print(board[0],"\n",board[1],"\n",board[2])
+    print('',board[0],'\n',board[1],'\n',board[2])
     command1 = int(input('how many over >')) -1
     command2 = int(input('how many down >')) -1
 
