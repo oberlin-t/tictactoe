@@ -1,9 +1,6 @@
 # tictactoe
 A simple python tictactoe game!
 
-## Installation
-Git clone and put tictactoe.py into your path.
-
 ## Things to do
 * Streamline code
 
